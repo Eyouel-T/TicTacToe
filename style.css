@@ -1,0 +1,26 @@
+body{
+    margin: auto;
+    text-align: center;
+
+}
+.mainSection{
+    display: inline-block;
+    border: 2px solid black;
+    width:700px;
+    text-align: center;
+    vertical-align: center;
+}
+.box{
+    background-color: rgb(131, 131, 122);
+    margin: 10px;
+    height: 150px;
+    width: 200px;
+    float: left;
+    width: 25%;
+    border: 2px solid black;
+    text-align: center;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
