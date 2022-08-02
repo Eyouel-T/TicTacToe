@@ -47,12 +47,21 @@ function winChecker(){
             alert("player: "+  blank[i][1] +"is the winner: "+ i);
             return true
         }
-        if((blank[0][i] == blank[1][i])&&(blank[1][i]==blank[2][i])&&(blank[i][2]!=0)){
+        else if((blank[0][i] == blank[1][i])&&(blank[1][i]==blank[2][i])&&(blank[2][i]!=0)){
             alert("all im saying is "+ blank[i][0]+ '='+blank[i][1]+ '='+blank[i][2]+"and they are not = 0");
             alert("player: "+  blank[i][1] +"is the winner: "+ i);
             return true
         }
     }
+    if(blank[0][0]==blank[1][1]==blank[2][2]!=0){
+        alert("player: "+ player +"is the winner: ");
+        return true
+    }
+    else if(blank[2][0]==blank[1][1]==blank[0][2]!=0){
+        alert("player: "+ player +"is the winner: ");
+        return true
+    }
+
     return false
 }
 document.querySelector("#one").onclick = function(){
