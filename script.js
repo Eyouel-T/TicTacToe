@@ -10,7 +10,7 @@ function turnGiver(){
         document.querySelector("body").setAttribute("style", "background-color: red;");
 
         turn = !turn;
-        document.querySelector("#player").innerHTML = "<h1> player 1's turn</h1>"
+        document.querySelector("#player").innerHTML = "<h4> player 1's turn</h4>"
         if(player==1){
             player=2
         }
@@ -22,7 +22,7 @@ function turnGiver(){
         document.querySelector("body").setAttribute("style", "background-color: blue;");
 
         turn = !turn;
-        document.querySelector("#player").innerHTML = "<h1> player 2's turn</h1>"
+        document.querySelector("#player").innerHTML = "<h4> player 2's turn</h4>"
         if(player==1){
             player=2
         }
@@ -46,7 +46,8 @@ function winChecker(){
             alert("all im saying is "+ blank[i][0]+ '='+blank[i][1]+ '='+blank[i][2]+"and they are not = 0");
             alert("player: "+  blank[i][1] +"is the winner: "+ i);
             document.querySelector("#player").innerHTML = "player"+blank[i][1]+"has won the game";
-            return true
+            if(alert( "player"+blank[i][1]+"has won the game")){}
+else    window.location.reload();
         }
         else if((blank[0][i] == blank[1][i])&&(blank[1][i]==blank[2][i])&&(blank[2][i]!=0)){
             alert("all im saying is "+ blank[i][0]+ '='+blank[i][1]+ '='+blank[i][2]+"and they are not = 0");
@@ -68,10 +69,10 @@ function winChecker(){
 document.querySelector("#one").onclick = function(){
     
     if(turn){
-    document.querySelector("#one").setAttribute("style", "background-color: green;")
+    document.querySelector("#one").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     else{
-        document.querySelector("#one").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#one").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ");
     }
     marked(0,0,player);
     turnGiver();
@@ -80,10 +81,10 @@ document.querySelector("#one").onclick = function(){
 document.querySelector("#two").onclick = function(){
     
     if(turn){
-    document.querySelector("#two").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+    document.querySelector("#two").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     else{
-        document.querySelector("#two").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#two").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     marked(0,1,player);
     turnGiver();
@@ -92,10 +93,10 @@ document.querySelector("#two").onclick = function(){
 document.querySelector("#three").onclick = function(){
  
     if(turn){
-        document.querySelector("#three").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#three").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#three").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#three").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(0,2,player);
         turnGiver();
@@ -104,10 +105,10 @@ document.querySelector("#three").onclick = function(){
 document.querySelector("#four").onclick = function(){
     
     if(turn){
-        document.querySelector("#four").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#four").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#four").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#four").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(1,0,player);
         turnGiver();
@@ -116,10 +117,10 @@ document.querySelector("#four").onclick = function(){
 document.querySelector("#five").onclick = function(){
 
     if(turn){
-        document.querySelector("#five").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#five").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#five").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#five").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(1,1,player);
         turnGiver();
@@ -128,10 +129,10 @@ document.querySelector("#five").onclick = function(){
 document.querySelector("#six").onclick = function(){
   
     if(turn){
-        document.querySelector("#six").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#six").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#six").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#six").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(1,2,player);
         turnGiver();
@@ -140,10 +141,10 @@ document.querySelector("#six").onclick = function(){
 document.querySelector("#seven").onclick = function(){
  
     if(turn){
-        document.querySelector("#seven").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#seven").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#seven").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#seven").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(2,0,player);
         turnGiver();
@@ -152,10 +153,10 @@ document.querySelector("#seven").onclick = function(){
 document.querySelector("#eight").onclick = function(){
 
     if(turn){
-        document.querySelector("#eight").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#eight").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#eight").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#eight").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(2,1,player);
         turnGiver();
@@ -164,10 +165,10 @@ document.querySelector("#eight").onclick = function(){
 document.querySelector("#nine").onclick = function(){
 
     if(turn){
-        document.querySelector("#nine").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+        document.querySelector("#nine").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         else{
-            document.querySelector("#nine").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:100px; background-repeat:no-repeat; ")
+            document.querySelector("#nine").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
         marked(2,2,player);
         turnGiver();

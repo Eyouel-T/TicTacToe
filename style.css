@@ -1,23 +1,25 @@
 body{
     margin: auto;
     text-align: center;
-
+    background-color: #73a24e;
 }
 .mainSection{
+    margin-top: 3%;
     display: inline-block;
-    border: 2px solid black;
+    border: none;
     width:700px;
     text-align: center;
     vertical-align: center;
+    background-color: #39395f;
 }
 .box{
-    background-color: rgb(131, 131, 122);
+    background-color: #416a59;
     margin: 10px;
-    height: 150px;
-    width: 200px;
+    height: 120px;
+    width: 170px;
     float: left;
     width: 25%;
-    border: 2px solid black;
+    border: none;
     text-align: center;
 }
 .row{
