@@ -1,9 +1,8 @@
 var player= 1
 var clickedBoxes = {}
 var turn = false;
-var blank = [[0,0,0],[0,0,0],[0,0,0],
-             [0,0,0],[0,0,0],[0,0,0],
-             [0,0,0],[0,0,0],[0,0,0],] 
+var blank = [[0,0,0],[0,0,0],[0,0,0]
+             ] 
 
 function turnGiver(){
     if(turn){
@@ -33,48 +32,50 @@ function turnGiver(){
 
 }
 function marked(row, column , player){
-    alert(row + " "+ column + " "+ player);
     blank[row][column]=player;
-    alert(blank);
     winChecker();
 }
 function winChecker(){
-    alert("test win checker after a move");
+
     for(var i=0; i<3;i++){
         console.log(i);
+        //check if the any row is the same player, meaning horizontal win
         if((blank[i][0] == blank[i][1])&&(blank[i][1]==blank[i][2])&&(blank[i][2]!=0)){
-            alert("all im saying is "+ blank[i][0]+ '='+blank[i][1]+ '='+blank[i][2]+"and they are not = 0");
-            alert("player: "+  blank[i][1] +"is the winner: "+ i);
-            document.querySelector("#player").innerHTML = "player"+blank[i][1]+"has won the game";
+           
             if(alert( "player"+blank[i][1]+"has won the game")){}
-else    window.location.reload();
+            else    window.location.reload();
         }
+        //check if the any column is the same player, meaning vertical win
         else if((blank[0][i] == blank[1][i])&&(blank[1][i]==blank[2][i])&&(blank[2][i]!=0)){
-            alert("all im saying is "+ blank[i][0]+ '='+blank[i][1]+ '='+blank[i][2]+"and they are not = 0");
-            alert("player: "+  blank[i][1] +"is the winner: "+ i);
-            return true
+            
+            if(alert( "player"+blank[0][i]+"has won the game")){}
+            else    window.location.reload();
         }
     }
+    //check if the diagonal is the same player, meaning win
     if((blank[0][0] == blank[1][1])&&(blank[1][1]==blank[2][2])&&(blank[2][2]!=0)){
-        alert("player: "+ player +"is the winner: ");
-        return true
+        alert(blank)
+        if(alert( "player"+player+"has won the game")){}
+        else    window.location.reload();
     }
+    //check if the diagonal is the same player, meaning win
     else if((blank[0][2] == blank[1][1])&&(blank[1][1]==blank[2][0])&&(blank[2][0]!=0)){
-        alert("player: "+ player +"is the winner: ");
-        return true
+        alert(blank);
+        if(alert( "player"+player+"has won the game")){}
+        else    window.location.reload();
     }
 
     return false
 }
 document.querySelector("#one").onclick = function(){
-    
+    marked(0,0,player);
     if(turn){
     document.querySelector("#one").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     else{
         document.querySelector("#one").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ");
     }
-    marked(0,0,player);
+    
     turnGiver();
 }
 
@@ -87,6 +88,7 @@ document.querySelector("#two").onclick = function(){
         document.querySelector("#two").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     marked(0,1,player);
+    alert(blank);
     turnGiver();
 }
 
