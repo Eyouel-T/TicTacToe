@@ -1,5 +1,5 @@
 var player= 1
-var clickedBoxes = {}
+var clickedBoxes = []
 var turn = false;
 var blank = [[0,0,0],[0,0,0],[0,0,0]
              ] 
@@ -67,20 +67,28 @@ function winChecker(){
 
     return false
 }
+// functions for each of the squares
 document.querySelector("#one").onclick = function(){
-    marked(0,0,player);
-    if(turn){
-    document.querySelector("#one").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
+
+    if (!clickedBoxes.includes("one")){
+        
+        if(turn){
+            document.querySelector("#one").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
+        }
+        else{
+            document.querySelector("#one").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ");
+        }
+        marked(0,0,player);
+        turnGiver();
+        clickedBoxes.push("one")
     }
     else{
-        document.querySelector("#one").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ");
+        alert("please select an unselected box");
     }
-    
-    turnGiver();
 }
 
 document.querySelector("#two").onclick = function(){
-    
+    if (!clickedBoxes.includes("two")){
     if(turn){
     document.querySelector("#two").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
@@ -88,12 +96,17 @@ document.querySelector("#two").onclick = function(){
         document.querySelector("#two").setAttribute("style", "background-image: url('o.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
     }
     marked(0,1,player);
-    alert(blank);
+
     turnGiver();
+    clickedBoxes.push("two")
+}
+else{
+    alert("please select an unselected box");
+}
 }
 
 document.querySelector("#three").onclick = function(){
- 
+    if (!clickedBoxes.includes("three")){
     if(turn){
         document.querySelector("#three").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -102,10 +115,15 @@ document.querySelector("#three").onclick = function(){
         }
         marked(0,2,player);
         turnGiver();
+        clickedBoxes.push("three")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#four").onclick = function(){
-    
+    if (!clickedBoxes.includes("four")){
     if(turn){
         document.querySelector("#four").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -114,10 +132,15 @@ document.querySelector("#four").onclick = function(){
         }
         marked(1,0,player);
         turnGiver();
+        clickedBoxes.push("four")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#five").onclick = function(){
-
+    if (!clickedBoxes.includes("five")){
     if(turn){
         document.querySelector("#five").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -126,10 +149,15 @@ document.querySelector("#five").onclick = function(){
         }
         marked(1,1,player);
         turnGiver();
+        clickedBoxes.push("five")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#six").onclick = function(){
-  
+    if (!clickedBoxes.includes("six")){
     if(turn){
         document.querySelector("#six").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -138,10 +166,15 @@ document.querySelector("#six").onclick = function(){
         }
         marked(1,2,player);
         turnGiver();
+        clickedBoxes.push("six")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#seven").onclick = function(){
- 
+    if (!clickedBoxes.includes("seven")){
     if(turn){
         document.querySelector("#seven").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -150,10 +183,15 @@ document.querySelector("#seven").onclick = function(){
         }
         marked(2,0,player);
         turnGiver();
+        clickedBoxes.push("seven")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#eight").onclick = function(){
-
+    if (!clickedBoxes.includes("eight")){
     if(turn){
         document.querySelector("#eight").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -162,10 +200,15 @@ document.querySelector("#eight").onclick = function(){
         }
         marked(2,1,player);
         turnGiver();
+        clickedBoxes.push("eight")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 document.querySelector("#nine").onclick = function(){
-
+    if (!clickedBoxes.includes("nine")){
     if(turn){
         document.querySelector("#nine").setAttribute("style", "background-image: url('x.png'); background-position: center; background-size:60%; background-repeat:no-repeat; ")
         }
@@ -174,6 +217,11 @@ document.querySelector("#nine").onclick = function(){
         }
         marked(2,2,player);
         turnGiver();
+        clickedBoxes.push("nine")
+    }
+    else{
+        alert("please select an unselected box");
+    }
 }
 
 
